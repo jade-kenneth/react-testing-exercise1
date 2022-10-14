@@ -6,7 +6,7 @@ import { act } from "react-dom/test-utils";
 
 import ContactForm from "./contact-form";
 import { CATEGORY, PROJECTS } from "./validation";
-const { ToastContainer } = createStandaloneToast();
+
 describe("Contact form component", () => {
   beforeEach(() => {
     render(<ContactForm />);
@@ -45,7 +45,7 @@ describe("Contact form component", () => {
     );
     expect(errorFormControl).toHaveLength(5);
   });
-  test("user clicks submit with valid inputs shows toast", async () => {
+  test("user clicks submit with valid inputs shows success toast", async () => {
     const emailInput = await screen.getByRole("input", {
       name: "form.input.email",
     });
